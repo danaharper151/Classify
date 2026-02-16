@@ -1,11 +1,15 @@
 # Skin Lesion Classifier
-### Android application that uses a pretrained MobilNetV2 model for binary classification of skin lesions (benign/malignant)
-Take a photo of a mole or skin lesion with your cell phone and the CNN will classify the lesion 
+## Android application that uses a MobilNetV2 model trained on the HAM10000 dataset for binary classification of skin lesions 
 
+Take a photo of a skin lesion with your cell phone and the CNN will classify the lesion as benign or malignant with a confidence score.
+
+### ***This skin lesion classifier is for software develpoment purposes only and is not for medical use.***
+
+### ***Consult a medical professional for accurate diagnosis of any medical condition.*** 
 
 ## Features
-- This skin lesion classifier is for software develpoment purposes only and is not for medical use.
-- Consult a medical professional for accurate diagnosis of any medical condition. 
+
+
 - Take a photo of a skin lesion with your cell phone or upload an image from your google drive.
 - The pretrained MobilNetV2 model will classify the skin lesion as malignant or benign.
 - Results display with confidence scores.
@@ -40,7 +44,7 @@ Take a photo of a mole or skin lesion with your cell phone and the CNN will clas
   
 
 ## About
-This project demonstrates CNN image classification in Android development.
+This project demonstrates Convolutional Neural Network training in dermascopic image classificaion and Android app development.
 
 ## Screenshots
 <img src="https://github.com/user-attachments/assets/ef015c25-b088-4947-aff7-f27aa5b1253d" width="300" alt="Screenshot_20260216-111917" />
