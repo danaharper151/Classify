@@ -1,4 +1,4 @@
-# Skin Lesion Classification Android App
+# Skin Lesion Classifier
 
 An Android application that uses a custom-trained MobileNetV2 CNN to classify skin lesions as benign or malignant. This project demonstrates transfer learning, data augmentation techniques, and mobile ML deployment for medical image analysis.
 
