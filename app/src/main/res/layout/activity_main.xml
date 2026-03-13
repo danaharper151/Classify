@@ -92,7 +92,7 @@
                 android:text="Benign"
                 android:textSize="32sp"
                 android:textStyle="bold"
-                android:textColor="#00ff7a"
+                android:textColor="#669900"
                 android:layout_marginTop="8dp" />
 
             <TextView
@@ -150,7 +150,7 @@
             android:layout_weight="1"
             android:text="Take Photo"
             android:textColor="@color/black"
-            android:textSize="14sp"
+
             app:backgroundTint="#00ff7a"
             android:layout_marginEnd="8dp"
             app:cornerRadius="8dp" />
