@@ -1,19 +1,29 @@
-# Skin Lesion Classifier
+# Skin Lesion Classification Android App
 
-An Android application that uses a custom-trained MobileNetV2 CNN to classify skin lesions as benign or malignant. This project demonstrates transfer learning, data augmentation techniques, and mobile ML deployment for medical image analysis.
+Mobile deep learning application achieving **91.2% recall** in malignant skin lesion detection. This project demonstrates end-to-end machine learning engineering: from handling severe class imbalance (5:1 ratio), to iterative model optimization (v1.0 → v2.0: +12.7% recall improvement), to production deployment on Android via TensorFlow Lite.
 
-##  Features
+**Technical Achievement**: Improved model performance from 75.6% to 86.8% accuracy through strategic dataset balancing, hyperparameter tuning, and data augmentation— demonstrating practical ML optimization techniques beyond theoretical implementation.
 
-- **Real-time Classification**: Take photos with your phone's camera or upload from gallery
-- **Deep Learning Model**: MobileNetV2 architecture fine-tuned on HAM10000 dataset
-- **Binary Classification**: Predicts benign vs. malignant skin lesions
-- **TensorFlow Lite**: Optimized model for mobile deployment (9 MB)
-- **High Accuracy**: 86.8% accuracy with 91.2% recall (catches 9 out of 10 malignant cases)
-- **User-Friendly Interface**: Clean Material Design UI with confidence scores
+### **Disclaimer**: This application is developed strictly for software engineering and machine learning demonstration purposes. It is not a medical diagnostic tool and is not intended for clinical use or professional screening.
+
+
+## Key Features
+
+**Machine Learning:**
+- Custom-trained MobileNetV2 on 16,000 dermatoscopic images (HAM10000 dataset)
+- Binary classification: Benign vs. Malignant (melanoma, basal cell carcinoma)
+- 86.8% accuracy, **91.2% recall**, 94.3% AUC
+- Optimized TensorFlow Lite model (9 MB, <200ms inference)
+
+**Mobile Application:**
+- Real-time camera capture and gallery image classification
+- Material Design UI with confidence scores and color-coded results
+- CameraX integration for modern Android camera handling
+- Robust bitmap processing for various image formats
 
 ##  Model Performance
 
-### Current Model (v2.0) - **Recommended**
+### Current Model (v2.0) 
 
 | Metric | Value | Description |
 |--------|-------|-------------|
@@ -34,7 +44,7 @@ An Android application that uses a custom-trained MobileNetV2 CNN to classify sk
 | F1 Score | 0.762 | **0.873** | **+11.1%**  |
 | AUC | 0.826 | **0.943** | **+11.7%**  |
 
-**Key Achievement**: The new model catches **91% of malignant lesions** compared to 78% in the original version - a critical improvement for medical screening applications.
+**Key Achievement**: **The optimization focus was placed on maximizing Recall, ensuring the model's ability to minimize false negatives—a common objective in binary classification studies for imbalanced datasets.**
 
 ##  Project Structure
 
@@ -60,7 +70,7 @@ Classify/
 └── README.md
 ```
 
-## 🔧 Technologies Used
+## Technologies Used
 
 ### Android App
 - **Language**: Kotlin
@@ -102,13 +112,13 @@ To address the severe class imbalance (5:1 ratio), we used a hybrid approach:
 - **Validation Set**: 3,200 images (1,600 benign + 1,600 malignant)
 - **Split Ratio**: 80/20 train-validation
 
-### Data Augmentation (Training Only)
+### Data Augmentation
 Applied to training data to improve generalization:
-- **Rotation**: ±20°
-- **Width/Height Shift**: ±20%
+- **Rotation**: ±10°
+- **Width/Height Shift**: ±10%
 - **Horizontal Flip**: Yes
 - **Vertical Flip**: Yes
-- **Zoom Range**: ±20%
+- **Zoom Range**: ±10%
 - **Fill Mode**: Nearest neighbor
 
 ### Model Architecture
@@ -141,12 +151,14 @@ Output (Binary: Benign/Malignant)
 | **Loss Function** | Binary Crossentropy | Standard for binary classification |
 | **Callbacks** | EarlyStopping, ReduceLROnPlateau | Prevent overfitting |
 
-### Key Improvements from v1.0
+### Key Improvements from v1.0: 
+
 1.  **Larger balanced dataset** (16,000 vs 8,000 images)
 2.  **Higher batch size** (64 vs 32) for more stable gradients
 3.  **More training epochs** (50 vs 30) for better convergence
 4.  **Optimized learning rate** (0.0005 vs 0.0001)
 5.  **4x malignant augmentation** for better minority class learning
+6.  **Lighter augmentation** rotation, width-shift, height-shift, and zoom ranges all halfed to reduce image distortion.
 
 ##  Getting Started
 
@@ -202,7 +214,7 @@ cd Classify
   - Red = Malignant
 - **Disclaimer**: Always consult a medical professional
 
- **Medical Disclaimer**: This app is for **educational purposes only**. It is NOT a medical diagnostic tool. Always consult qualified healthcare professionals for medical advice and diagnosis.
+ ### **Medical Disclaimer**: This app is for **educational purposes only**. It is NOT a medical diagnostic tool. Always consult qualified healthcare professionals for medical concerns.
 
 ##  Training Your Own Model
 
@@ -247,10 +259,13 @@ cd Classify
 - More epochs (50) allows better convergence
 - Tuned learning rate (0.0005) balances speed and stability
 
-**4. Extensive Augmentation**
+**4. Updated Data Augmentation**
+- Rotation range reduced from 20 to 10, height/width-shift ranges reduced from 0.2 to 0.1, zoom range reduced from 0.2 to 0.1
+- Images augmented on-the-fly during training to incorporate randomness
 - Each malignant image seen in ~4 different variations
 - Increases effective dataset diversity
 - Reduces overfitting on minority class
+
 
 ### Confusion Matrix Insights (v2.0)
 Based on validation results:
@@ -310,7 +325,6 @@ This project is for educational purposes. The HAM10000 dataset is available unde
 - Google Colab for free GPU resources
 - MobileNetV2 architecture developers
 - Android development community
-- Anthropic Claude.ai for Colab and Android Studio build assistance
 
 ##  Contact
 
@@ -326,4 +340,4 @@ For questions, suggestions, or collaboration opportunities, please open an issue
 
 ---
 
- **IMPORTANT MEDICAL DISCLAIMER**: This application is a student educational project and is NOT intended for actual medical diagnosis, treatment, or clinical decision-making. Skin lesion evaluation requires professional medical examination. Always consult qualified dermatologists or healthcare providers for any skin concerns.
+### **Disclaimer**: This application is developed strictly for software engineering and machine learning demonstration purposes. It is not a medical diagnostic tool and is not intended for clinical use or professional screening.
