@@ -13,7 +13,7 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Skin Lesion Classifier"
+        android:text="Classify"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#333333"
@@ -149,9 +149,7 @@
             android:layout_height="56dp"
             android:layout_weight="1"
             android:text="Take Photo"
-            android:textColor="@color/black"
-
-            app:backgroundTint="#00ff7a"
+            app:backgroundTint="#669900"
             android:layout_marginEnd="8dp"
             app:cornerRadius="8dp" />
 
@@ -161,9 +159,7 @@
             android:layout_height="56dp"
             android:layout_weight="1"
             android:text="From Gallery"
-            android:textColor="@color/black"
-
-            app:backgroundTint="#00ff7a"
+            app:backgroundTint="#669900"
             android:layout_marginStart="8dp"
             app:cornerRadius="8dp" />
 
