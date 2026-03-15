@@ -4,7 +4,11 @@ Mobile deep learning application achieving **91.2% recall** in malignant skin le
 
 **Technical Achievement**: Improved model performance from 75.6% to 86.8% accuracy through strategic dataset balancing, hyperparameter tuning, and data augmentation— demonstrating practical ML optimization techniques beyond theoretical implementation.
 
-### **Disclaimer**: This application is developed strictly for software engineering and machine learning demonstration purposes. It is not a medical diagnostic tool and is not intended for clinical use or professional screening.
+**Disclaimer**: ***This application is developed strictly for software engineering and machine learning demonstration purposes. It is not a medical diagnostic tool and is not intended for clinical use or professional screening.***
+
+
+
+<img src="Classify_Home_Screen.jpg" alt="Home Screen" width="200">      <img src="Classify_Result_Screen.jpg" alt="Result Screen" width="200">
 
 
 ## Key Features
@@ -325,6 +329,7 @@ This project is for educational purposes. The HAM10000 dataset is available unde
 - Google Colab for free GPU resources
 - MobileNetV2 architecture developers
 - Android development community
+- Anthropic for Colab and Android Studio build assistance
 
 ##  Contact
 
