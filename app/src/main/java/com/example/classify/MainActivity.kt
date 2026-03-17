@@ -75,6 +75,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar?.hide() // removes the black action bar at the top of the screen
 
         initializeViews()
         setupClassifier()
@@ -209,9 +210,9 @@ class MainActivity : AppCompatActivity() {
 
         // Set color based on prediction
         if (result.label.contains("Benign", ignoreCase = true)) {
-            tvPrediction.setTextColor(ContextCompat.getColor(this, android.R.color.holo_green_dark))
+            tvPrediction.setTextColor(android.graphics.Color.parseColor("#04ff7e"))
         } else {
-            tvPrediction.setTextColor(ContextCompat.getColor(this, android.R.color.holo_red_dark))
+            tvPrediction.setTextColor(android.graphics.Color.parseColor("#ff0526"))
         }
     }
 
