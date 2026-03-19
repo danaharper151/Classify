@@ -92,7 +92,7 @@
                 android:text="Benign"
                 android:textSize="32sp"
                 android:textStyle="bold"
-                android:textColor="#669900"
+                android:textColor="#04FF7E"
                 android:layout_marginTop="8dp" />
 
             <TextView
@@ -108,12 +108,13 @@
                 android:id="@+id/tvDisclaimer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="For educational purposes only. Consult a medical professional for actual diagnosis."
-                android:textSize="12sp"
-                android:textColor="#FF9800"
+                android:text="THIS APP IS AN EDUCATIONAL PROTOTYPE NOT A DIAGNOSTIC TOOL. ALWAYS CONSULT A MEDICAL PROFESSIONAL FOR DIAGNOSIS."
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#FF0526"
                 android:layout_marginTop="12dp"
                 android:padding="8dp"
-                android:background="#FFF3E0" />
+                android:background="#FFFF82" />
 
         </LinearLayout>
 
@@ -150,7 +151,7 @@
             android:layout_weight="1"
             android:text="Take Photo"
             android:textColor="#000000"
-            app:backgroundTint="#04ff7e"
+            app:backgroundTint="#04FF7E"
             android:layout_marginEnd="8dp"
             app:cornerRadius="8dp" />
 
@@ -161,7 +162,7 @@
             android:layout_weight="1"
             android:text="From Gallery"
             android:textColor="#000000"
-            app:backgroundTint="#04ff7e"
+            app:backgroundTint="#04FF7E"
             android:layout_marginStart="8dp"
             app:cornerRadius="8dp" />
 
