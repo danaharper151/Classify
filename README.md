@@ -555,7 +555,7 @@ This project demonstrates:
 ## Academic Context
 
 **Author**: Dana Harper  
-**Degree**: BSCS and Master's Student in Computer Science  
+**Degree**: BSCS and CS Master's Candidate 
 **Institution**: California State University Channel Islands   
 **Focus Areas**: Machine Learning, Computer Vision, Mobile Computing    
 **Project Type**: Demonstration of ML engineering and software development skills    
@@ -591,7 +591,7 @@ This project demonstrates:
 ## License & Disclaimer
 
 ### License
-This project is developed as a part of coursework for **educational and portfolio purposes**. The HAM10000 dataset is available under Creative Commons Attribution-NonCommercial 4.0 International License.
+This project is licensed under the MIT license- see LICENDE file for details. It was developed as a part of coursework for **educational and portfolio purposes**. The HAM10000 dataset is available under Creative Commons Attribution-NonCommercial 4.0 International License.
 
 ### Medical Disclaimer
  **IMPORTANT**: This application is a **software engineering demonstration** and **NOT a medical diagnostic tool**.
@@ -621,7 +621,7 @@ This project is developed as a part of coursework for **educational and portfoli
 
 ## Acknowledgments
 
-- HAM10000 dataset creators for providing high-quality dermatoscopic images for research
+- Harvard Dataverse for the HAM10000 dataset, providing high-quality dermatoscopic images for research
 - TensorFlow and Keras teams for accessible deep learning frameworks
 - Google Colab for free GPU resources enabling model training
 - Android development community for comprehensive documentation and libraries  
