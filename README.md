@@ -591,7 +591,7 @@ This project demonstrates:
 ## License & Disclaimer
 
 ### License
-This project is licensed under the MIT license- see LICENDE file for details. It was developed as a part of coursework for **educational and portfolio purposes**. The HAM10000 dataset is available under Creative Commons Attribution-NonCommercial 4.0 International License.
+This project is open source and available under the [MIT License](LICENSE). The HAM10000 dataset is available under Creative Commons Attribution-NonCommercial 4.0 International License.
 
 ### Medical Disclaimer
  **IMPORTANT**: This application is a **software engineering demonstration** and **NOT a medical diagnostic tool**.
