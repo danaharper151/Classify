@@ -73,7 +73,7 @@ The app will install and launch on your device.
 ## Screenshots
 <p>
   <img src="images/classifymalignantresult.jpg" alt="Result Screen: Malignant" width="200" style="margin: 10px;"/>
-  <img src="images/classifybenignresult.jpg" alt="Result Screen: Benign" width="200" style="margin: 10px;"/>
+  <img src="images/classifybenignscreen.jpg" alt="Result Screen: Benign" width="200" style="margin: 10px;"/>
   <img src="images/classifyhomescreen.jpg" alt="Home Screen" width="200" style="margin: 10px;"/>
    
 </p>  
