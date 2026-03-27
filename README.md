@@ -18,6 +18,68 @@ A high-performance binary image classifier for dermatoscopic images, achieving *
 **Research Focus**: Addressed severe class imbalance (5:1 benign-to-malignant ratio) in medical imaging through multiple approaches: synthetic minority oversampling, majority class undersampling, and weighted loss functions. Conducted comparative analysis of augmentation strategies (pre-computed vs. on-the-fly) to optimize training stability and generalization.
 
 ---
+## Installation & Setup  
+
+### Prerequisites   
+**For Android Development**:  
+- Android Studio Arctic Fox or later
+- Android SDK 24+ (minimum), SDK 34 (target)
+- Physical Android device or emulator
+- 2GB+ RAM on target device
+#### 1. Clone Repository
+```bash
+git clone https://github.com/danaharper151/Classify.git
+cd Classify
+```
+
+#### 2. Open in Android Studio
+```
+File → Open → Select Classify folder
+Wait for Gradle sync to complete
+```
+
+#### 3. Build & Run
+```
+Build → Clean Project
+Build → Rebuild Project
+Run → Select device → Click Run
+```
+
+The app will install and launch on your device. 
+
+---
+
+## Usage
+
+### Taking a Photo
+1. Launch app → Tap **"Take Photo"**
+2. Grant camera permission (first time only)
+3. Capture image of skin lesion
+4. View classification result with confidence score
+
+### Using Gallery Images
+1. Tap **"From Gallery"**
+2. Select image from device storage
+3. View instant classification
+
+### Interpreting Results
+- **Prediction**: Benign (green) or Malignant (red)
+- **Confidence**: Model's certainty (0-100%)
+- **Color Coding**: Visual indicator of classification
+- **Disclaimer**: Reminder this is educational only
+
+---
+
+## Screenshots
+<p>
+  <img src="images/classifymalignantresult.jpg" alt="Result Screen: Malignant" width="200" style="margin: 10px;"/>
+  <img src="images/classifybenignresult.jpg" alt="Result Screen: Benign" width="200" style="margin: 10px;"/>
+  <img src="images/classifyhomescreen.jpg" alt="Home Screen" width="200" style="margin: 10px;"/>
+   
+</p>  
+
+---
+
 
 ## Technical Skills Demonstrated
 
@@ -41,14 +103,7 @@ A high-performance binary image classifier for dermatoscopic images, achieving *
 - **Documentation**: Comprehensive technical documentation of methodology, results, and design decisions
 - **Reproducibility**: Complete training notebooks with hyperparameter configurations and random seeds
 
----
-## Screenshots
-<p>
-  <img src="images/classifymalignantresult.jpg" alt="Result Screen: Malignant" width="200" style="margin: 10px;"/>
-  <img src="images/classifybenignresult.jpg" alt="Result Screen: Benign" width="200" style="margin: 10px;"/>
-  <img src="images/classifyhomescreen.jpg" alt="Home Screen" width="200" style="margin: 10px;"/>
-   
-</p>
+
 
 ---
 
@@ -317,101 +372,9 @@ Classify/
 
 ---
 
-## Getting Started
 
-### Prerequisites
 
-**For Android Development**:
-- Android Studio Arctic Fox or later
-- Android SDK 24+ (minimum), SDK 34 (target)
-- Physical Android device or emulator
-- 2GB+ RAM on target device
 
-**For Model Training** (optional):
-- Google Colab account (free GPU access)
-- HAM10000 dataset from Kaggle
-- Python 3.8+, TensorFlow 2.x, Keras
-
-### Installation & Setup
-
-#### 1. Clone Repository
-```bash
-git clone https://github.com/danaharper151/Classify.git
-cd Classify
-```
-
-#### 2. Open in Android Studio
-```
-File → Open → Select Classify folder
-Wait for Gradle sync to complete
-```
-
-#### 3. Build & Run
-```
-Build → Clean Project
-Build → Rebuild Project
-Run → Select device → Click Run
-```
-
-The app will install and launch on your device.
-
-### Training Your Own Model (Optional)
-
-If you want to retrain the model with different hyperparameters:
-
-1. **Download HAM10000 Dataset**
-   - Source: [Kaggle HAM10000](https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000)
-   - Files needed: `HAM10000_metadata.csv`, `HAM10000_images_part_1.zip`, `HAM10000_images_part_2.zip`
-   - Upload to Google Drive
-
-2. **Open Training Notebook**
-   - Upload `training_notebooks/train_balanced_dataset.ipynb` to Google Colab
-   - Runtime → Change runtime type → GPU (T4 recommended)
-
-3. **Configure Paths**
-   ```python
-   DATASET_FOLDER = '/content/drive/MyDrive/HAM10000'
-   ```
-
-4. **Run Training**
-   - Execute all cells in sequence
-   - Training time: ~1-2 hours with GPU
-   - Model auto-downloads as `skin_lesion_binary.tflite`
-
-5. **Deploy to App**
-   ```bash
-   # Rename downloaded model
-   mv skin_lesion_binary.tflite skin_lesion_model.tflite
-   
-   # Copy to app assets
-   cp skin_lesion_model.tflite app/src/main/assets/
-   
-   # Rebuild app
-   Build → Clean Project → Rebuild Project
-   ```
-
----
-
-## Usage
-
-### Taking a Photo
-1. Launch app → Tap **"Take Photo"**
-2. Grant camera permission (first time only)
-3. Capture image of skin lesion
-4. View classification result with confidence score
-
-### Using Gallery Images
-1. Tap **"From Gallery"**
-2. Select image from device storage
-3. View instant classification
-
-### Interpreting Results
-- **Prediction**: Benign (green) or Malignant (red)
-- **Confidence**: Model's certainty (0-100%)
-- **Color Coding**: Visual indicator of classification
-- **Disclaimer**: Reminder this is educational only
-
----
 
 ## Technical Details
 
@@ -485,30 +448,6 @@ Thread {
 - Maintainable (UI changes don't affect ML logic)
 - Scalable (easy to add features like history, batch processing)
 
----
-
-## Future Enhancements
-
-### Model Improvements
-- [ ] **Multi-class Classification**: Expand to 7 HAM10000 lesion types
-- [ ] **Ensemble Methods**: Combine multiple models for improved accuracy
-- [ ] **Attention Mechanisms**: Grad-CAM visualization for explainability
-- [ ] **Metadata Integration**: Incorporate patient age, sex, lesion location
-- [ ] **Active Learning**: Continuous improvement from user feedback
-
-### Mobile App Features
-- [ ] **History Tracking**: Store classification results with timestamps
-- [ ] **Batch Processing**: Classify multiple images at once
-- [ ] **Confidence Calibration**: Improved probability estimates
-- [ ] **Offline Mode**: Full functionality without internet
-- [ ] **Export Results**: Share results with healthcare providers
-
-### Engineering
-- [ ] **CI/CD Pipeline**: Automated testing and deployment
-- [ ] **Unit Tests**: Comprehensive test coverage (target: 80%+)
-- [ ] **Model A/B Testing**: In-app experimentation framework
-- [ ] **Telemetry**: Anonymous usage analytics for model improvement
-- [ ] **Accessibility**: Screen reader support, high contrast mode
 
 ---
 
