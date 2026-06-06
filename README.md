@@ -130,7 +130,7 @@ Dropout(0.3) + Dense(128, ReLU) + Dropout(0.2)
     ↓
 Dense(1, Sigmoid) → Binary Classification
 ```
-
+  
 **Training Strategy**:
 - **Optimizer**: Adam with learning rate 0.0005 and ReduceLROnPlateau scheduling
 - **Regularization**: Dropout (0.3, 0.2), L2 weight decay, early stopping (patience=5)
@@ -155,6 +155,32 @@ Dense(1, Sigmoid) → Binary Classification
 - Bitmap format compatibility layer (handles JPEG, PNG, WebP)
 - Graceful degradation for unsupported image formats
 - Model loading failure recovery with user feedback
+
+---
+
+## Training Your Own Model
+
+### Download Dataset
+1. Visit [Kaggle HAM10000](https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000)
+2. Download:
+   - `HAM10000_metadata.csv`
+   - `HAM10000_images_part_1.zip`
+   - `HAM10000_images_part_2.zip`
+3. Upload to Google Drive
+
+### Train in Google Colab
+1. Open a new Colab notebook
+2. Enable GPU: Runtime → Change runtime type → GPU (T4)
+3. Mount Google Drive and extract dataset
+4. Use the training configuration above
+5. Expected training time: ~1-2 hours with GPU
+
+### Deploy to App
+1. Download your trained model as a `.tflite` from Colab
+2. Rename to `skin_lesion_model.tflite`
+3. Replace in `app/src/main/assets/`
+4. Clean and rebuild project
+5. Run on device
 
 ---
 
